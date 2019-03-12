@@ -13,8 +13,8 @@ BIN=./bin
 
 CC=g++
 CCFLAGS=-std=c++11
-SOURCES=main.cpp
-OBJECTS=main.o
+SOURCES=main.cpp vol.cpp
+OBJECTS=main.o vol.o
 
 main: $(OBJECTS)
 	$(CC) $(CCFLAGS) $(OBJECTS) -o main $(LIBS)
