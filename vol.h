@@ -11,7 +11,7 @@ namespace KTMNYA001{
     class VolImage
     {
         private: // private members 
-        int width, height; // width and height of the image stack.
+        int width, height, numberOfImages;// width and height of the image stack.
         std::vector<unsigned char**> slices;
 
 

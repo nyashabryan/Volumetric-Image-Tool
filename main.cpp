@@ -1,6 +1,48 @@
+#include <iostream>
+#include "vol.h"
 
 using namespace std;
+using namespace KTMNYA001;
 
-int main(){
+static int argcount;
+static char** args;
+
+int main(int argc, char** argv){
+    argcount = argc;
+    args = argv;
+    
+    std::cout << "Running" << std::endl;
+    std::cout << argcount << std::endl;
+    std::cout << argv << std::endl;
+
+
+    // Declare the final print out variables.
+    int numberOfImages;
+    int numberOfBytesRequired;
+
+    // Create the volImageObject
+    VolImage volImage = VolImage();
+    volImage.readImages("./brain_mri_raws/brain_mri_raws/MRI");
+    if (argcount < 2) {
+
+
+    } else if (argcount == 5){
+        
+        std::cout << "Argument 1 " << args[0]  << std::endl;
+        std::cout << "Argument 2 " << args[1]  << std::endl;
+        std::cout << "Argument 3 " << args[2]  << std::endl; 
+        std::cout << "Argument 4 " << args[3]  << std::endl;
+
+    } else if (argcount == 6){
+
+    } else {
+
+    }
+
+    // Print the final statement to console
+
+    std::cout << "Number of images: " << numberOfImages << std::endl;
+    std::cout << "Number of bytes required: " << numberOfBytesRequired << std::endl;
+    
     return 0;
 }
