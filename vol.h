@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 
+typedef unsigned char u_char;
 
 namespace KTMNYA001{
 

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "vol.h"
 
 using namespace std;
@@ -22,7 +23,8 @@ int main(int argc, char** argv){
 
     // Create the volImageObject
     VolImage volImage = VolImage();
-    volImage.readImages("./brain_mri_raws/brain_mri_raws/MRI");
+    string baseName = "./brain_mri_raws/brain_mri_raws/MRI";
+    volImage.readImages(baseName);
     if (argcount < 2) {
 
 
