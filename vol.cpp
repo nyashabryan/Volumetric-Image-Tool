@@ -255,3 +255,7 @@ void KTMNYA001::VolImage::extractRow(int rowId, std::string output_prefix){
     delete row_slice;
 
 }
+
+int KTMNYA001::VolImage::getNumberOfImages(void){
+    return numberOfImages;
+}

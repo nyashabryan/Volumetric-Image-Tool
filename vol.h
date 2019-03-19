@@ -32,6 +32,8 @@ namespace KTMNYA001{
 
         void extractRow(int rowId, std::string output_prefix);
 
+        int getNumberOfImages(void);
+
     };
 
 }
