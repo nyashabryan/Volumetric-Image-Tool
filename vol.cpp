@@ -3,6 +3,8 @@
 #include <iostream>
 #include <sstream>
 #include<string>
+#include <cstdlib>
+#include <math.h>
 
 #include "vol.h"
 
@@ -136,7 +138,7 @@ void KTMNYA001::VolImage::diffmap(int sliceI, int sliceJ, std::string output_pre
     // Calculate the difference 
     for(int row = 0; row < height; row++){
         for(int col = 0; col < width; col++){
-            difference[row][col] = (u_char)(abs((float)slices[sliceI][row][col] - (float)slices[sliceJ][row][col])/ 2);
+            difference[row][col] = (u_char)(fabs((float)slices[sliceI][row][col] - (float)slices[sliceJ][row][col])/ 2);
         }
     }
     
