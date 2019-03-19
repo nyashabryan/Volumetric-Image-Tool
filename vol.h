@@ -22,7 +22,6 @@ namespace KTMNYA001{
 
         bool readImages(std::string baseName);
 
-
         void diffmap(int sliceI, int sliceJ, std::string output_prefix);
 
 

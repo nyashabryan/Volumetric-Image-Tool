@@ -48,14 +48,16 @@ bool KTMNYA001::VolImage::readImages(std::string baseName){
 
     // Open the file stream to the header file.
     ifstream ifs(filename);
-
+    if(!ifs.good()){
+        exit(1);
+    }
     // Get the line in the header file.
     string line;
     getline(ifs, line);
 
     //Close the file stream
     ifs.close();
-
+    cout << "here" << endl;
     // Declare istringstream
     istringstream iss(line);
 
@@ -248,12 +250,7 @@ void KTMNYA001::VolImage::extractRow(int rowId, std::string output_prefix){
     }
     rawOfs.close();
 
-    // Deallocate the difference memory
-    for(int i=0; i < numberOfImages; i++){
-        delete row_slice[i];
-    }
-    delete row_slice;
-
+    // Deallocation of memory done in object. 
 }
 
 int KTMNYA001::VolImage::getNumberOfImages(void){

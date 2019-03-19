@@ -13,11 +13,11 @@ BIN=./bin
 
 CC=g++
 CCFLAGS=-std=c++11
-SOURCES=main.cpp vol.cpp
-OBJECTS=main.o vol.o
+SOURCES=volimage.cpp vol.cpp
+OBJECTS=volimage.o vol.o
 
 main: $(OBJECTS)
-	$(CC) $(CCFLAGS) $(OBJECTS) -o main $(LIBS)
+	$(CC) $(CCFLAGS) $(OBJECTS) -o volimage $(LIBS)
 
 .cpp.o:
 	$(CC) $(CCFLAGS) -c $<
@@ -27,13 +27,26 @@ depend:
 	$(CC) -M $(SOURCES) > incl.defs
 
 run:
-	./main
+	./volimage ./brain_mri_raws/brain_mri_raws/MRI
+
+extract:
+	./volimage ./brain_mri_raws/brain_mri_raws/MRI -x 5 output
+
+difference:
+	./volimage ./brain_mri_raws/brain_mri_raws/MRI -d 10 5 output
+
+extract_row:
+	./volimage ./brain_mri_raws/brain_mri_raws/MRI -g 5 output
 
 clean:
 	rm *.o
 	rm main
 	rm incl.defs
 	rm *.tar.gz
+
+remove_output:
+	rm *.raw
+	rm *.dat
 
 tar:
 	tar -zcvf KTMNYA001.tar.gz makefile README.md *.cpp *.h .git .gitignore
