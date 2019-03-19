@@ -38,15 +38,17 @@ difference:
 extract_row:
 	./volimage ./brain_mri_raws/brain_mri_raws/MRI -g 5 output
 
-clean: remove_output
+clean:
 	rm *.o
 	rm volimage
 	rm incl.defs
-	rm *.tar.gz
 
 remove_output:
 	rm *.raw
 	rm *.dat
+
+remove_tar:
+	rm *.tar.gz
 
 tar:
 	tar -zcvf KTMNYA001.tar.gz makefile README.md *.cpp *.h *.py .git .gitignore
