@@ -49,4 +49,4 @@ remove_output:
 	rm *.dat
 
 tar:
-	tar -zcvf KTMNYA001.tar.gz makefile README.md *.cpp *.h .git .gitignore
+	tar -zcvf KTMNYA001.tar.gz makefile README.md *.cpp *.h *.py .git .gitignore
