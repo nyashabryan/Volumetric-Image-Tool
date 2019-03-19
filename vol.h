@@ -30,6 +30,8 @@ namespace KTMNYA001{
 
         int volImageSize(void);
 
+        void extractRow(int rowId, std::string output_prefix);
+
     };
 
 }

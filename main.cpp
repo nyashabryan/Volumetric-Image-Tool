@@ -21,10 +21,13 @@ int main(int argc, char** argv){
     int numberOfImages;
     int numberOfBytesRequired;
 
+    string output_prefix = "output";
     // Create the volImageObject
     VolImage volImage = VolImage();
     string baseName = "./brain_mri_raws/brain_mri_raws/MRI";
     volImage.readImages(baseName);
+    //volImage.extract(5, output_prefix);
+    volImage.diffmap(5, 10, output_prefix);
     if (argcount < 2) {
 
 
