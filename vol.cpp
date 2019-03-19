@@ -205,12 +205,17 @@ void KTMNYA001::VolImage::extract(int sliceId, std::string output_prefix){
 }
 
 int KTMNYA001::VolImage::volImageSize(void){
-    double data_bytes = height * width;
-    double pointer_bytes = 0;
+    int data_bytes = height * width;
 
-    //for (int i =0; i < )
+    // For each slice pointer bytes
+    int pointer_bytes = 0;
+    // Pointer in vector
+    pointer_bytes += sizeof(slices[0]);
 
-    return 1;
+    // Pointers pointed to by the pointer above
+    pointer_bytes += (sizeof(slices[0][0]) * height);
+
+    return data_bytes + (pointer_bytes * numberOfImages);
 }
 
 
