@@ -38,9 +38,9 @@ difference:
 extract_row:
 	./volimage ./brain_mri_raws/brain_mri_raws/MRI -g 5 output
 
-clean:
+clean: remove_output
 	rm *.o
-	rm main
+	rm volimage
 	rm incl.defs
 	rm *.tar.gz
 
